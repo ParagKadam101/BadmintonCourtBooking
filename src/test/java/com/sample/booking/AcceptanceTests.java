@@ -39,6 +39,16 @@ public class AcceptanceTests {
                 .thenI().verifySlotNotBooked();
     }
 
+    @Test
+    void shouldBeAbleToBookBadmintonSlotWhenMultipleAlreadyExist() {
+        given().courts()
+                .and().bookCourtForSlot("court1", "10:30")
+                .and().bookCourtForSlot("court1", "11:30")
+                .whenI().bookCourtForSlot("court1", "11:15")
+                .thenI().verifySlotNotBooked();
+    }
+
+
     private void verifySlotNotBooked() {
         assertFalse(isBooked);
     }

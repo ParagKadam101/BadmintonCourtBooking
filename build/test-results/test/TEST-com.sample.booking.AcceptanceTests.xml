@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.sample.booking.AcceptanceTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-09-20T14:48:37" hostname="PARAGs-MacBook-Pro.local" time="0.656">
+<testsuite name="com.sample.booking.AcceptanceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-20T16:56:12" hostname="PARAGs-MacBook-Pro.local" time="0.051">
   <properties/>
-  <testcase name="shouldBeAbleToBookBadmintonSlot()" classname="com.sample.booking.AcceptanceTests" time="0.5"/>
-  <testcase name="shouldNotBeAbleToBookConflictingBadmintonSlot()" classname="com.sample.booking.AcceptanceTests" time="0.13"/>
-  <testcase name="shouldNotBeAbleToBookSameBadmintonSlot()" classname="com.sample.booking.AcceptanceTests" time="0.005"/>
+  <testcase name="shouldBeAbleToBookBadmintonSlotWhenMultipleAlreadyExist()" classname="com.sample.booking.AcceptanceTests" time="0.051"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

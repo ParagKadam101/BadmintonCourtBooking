@@ -25,8 +25,17 @@ public class Booking {
     }
 
     private boolean isConflictingSlot(String startTime) {
-        LocalTime inputTime = LocalTime.parse(this.startTime);
-        LocalTime endTime = LocalTime.parse(startTime).plus(30, ChronoUnit.MINUTES);
-        return inputTime.isAfter(LocalTime.parse(startTime)) && inputTime.isBefore(endTime);
+        LocalTime existingStartTime = LocalTime.parse(startTime);
+        LocalTime existingEndTime = existingStartTime.plus(30, ChronoUnit.MINUTES);
+
+        LocalTime inputStartTime = LocalTime.parse(this.startTime);
+        LocalTime inputEndTime = inputStartTime.plus(30, ChronoUnit.MINUTES);
+
+        return isInputSlotFallingInBetweenExistingSlot(existingStartTime, existingEndTime, inputStartTime, inputEndTime);
+    }
+
+    private boolean isInputSlotFallingInBetweenExistingSlot(LocalTime existingStartTime, LocalTime existingEndTime, LocalTime inputStartTime, LocalTime inputEndTime) {
+        return inputStartTime.isAfter(existingStartTime) && inputStartTime.isBefore(existingEndTime) ||
+               inputEndTime.isAfter(existingStartTime) && inputEndTime.isBefore(existingEndTime);
     }
 }
